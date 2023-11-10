@@ -1,0 +1,43 @@
+
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8' />
+    <title></title>
+    <meta name='description' content= />
+    <meta name='keywords' content='' />
+    <meta
+      name='viewport'
+      content='width=device-width,maximum-scale=1,user-scalable=yes'
+    />
+    <link rel='icon' href='https://suodz.cn/uwgjq/favicon.ico' />
+  </head>
+
+  <body style='margin: 0'>
+    <iframe
+      id='iframe'
+      width='100%'
+      height='100%'
+      frameborder='no'
+      border='0'
+      marginwidth='0'
+      marginheight='0'
+      allowtransparency='yes'
+    ></iframe>
+    <script>
+      const iframe = document.getElementById('iframe'); const hash =
+      document.location.hash || ''; const url = 'https://suodz.cn/uwgjq'
+      + hash + decodeURIComponent(''); iframe.src = url; function
+      changeFavicon(link) { let $favicon =
+      document.querySelector('link[rel="icon"]'); if ($favicon !== null &&
+      $favicon.href !== link) { $favicon.href = link; } else { $favicon =
+      document.createElement('link'); $favicon.rel = 'icon'; $favicon.href =
+      link; document.head.appendChild($favicon); } }
+      window.addEventListener('message', function (event) { const { type, title,
+      path, iconPath } = event.data || {}; if (type === 'faste_sync') { if
+      (title) document.title = title; if (iconPath) changeFavicon(iconPath); if
+      (typeof history.replaceState != 'undefined' && path) {
+      history.replaceState(null, null, path); } } });
+    </script>
+  </body>
+
+</html>
